@@ -1,13 +1,17 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    {% include 'login/modal.html.twig' %}
     <script>
+
         (async function(){
-            let credentials = {
+            await jwtLogin({
                 username: 'after@ya.ru',
                 password: 'darkside423'
-            };
-            await jwtLogin(credentials);
+            });
+            console.log(localStorage.token);
         })();
     </script>
+
+
 {% endblock %}
