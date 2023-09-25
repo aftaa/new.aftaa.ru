@@ -1,9 +1,9 @@
 $(function () {
     window.functions = {
         getData: async function () {
-            window.blocks = await jwtFetch('/private/blocks');
+            window.data = await jwtFetch('/private/index');
             if (jwtSuccess()) {
-                console.log(blocks);
+                console.log(data);
             } else {
                 modal.show();
             }
