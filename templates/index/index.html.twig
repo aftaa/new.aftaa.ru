@@ -2,18 +2,12 @@
 
 {% block body %}
     <script>
-
         (async function(){
             let credentials = {
                 username: 'after@ya.ru',
                 password: 'darkside423'
             };
-            // delete localStorage.token;
             await jwtLogin(credentials);
-            let blocks = await jwtFetch('/private/blocks');
-            console.log(blocks);
-
         })();
-
     </script>
 {% endblock %}
