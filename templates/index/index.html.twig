@@ -8,16 +8,10 @@
                 username: 'after@ya.ru',
                 password: 'darkside423'
             };
-            //await jwtFetchToken(credentials);
-
-            let response = await fetch(host + '/private/bloks', {
-                method: 'POST',
-                headers: {
-                    'Authorization': 'Beaver' + localStorage
-                }
-            })
-            let answer = response.json();
-
+            // delete localStorage.token;
+            await jwtLogin(credentials);
+            let blocks = await jwtFetch('/private/blocks');
+            console.log(blocks);
 
         })();
 
