@@ -1,8 +1,12 @@
 /**
- * @param credentials
- * @returns {Promise<boolean>}
+ * @returns {Promise<void>}
  */
 async function jwtFetchToken() {
+    if (!localStorage.username || !localStorage.password) {
+        console.log('Bad credentials');
+        localStorage.setItem('token', 'invalid');
+        return;
+    }
     let response = await fetch(host + '/login_check', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
@@ -12,7 +16,12 @@ async function jwtFetchToken() {
         })
     })
     let answer = await response.json();
-    localStorage.setItem('token', answer.token);
+    if (answer.token) {
+        console.log('Received token');
+        localStorage.setItem('token', answer.token);
+    } else {
+        localStorage.setItem('token', 'invalid');
+    }
 }
 
 /**
@@ -32,7 +41,6 @@ async function jwtFetchResponse(uri, method = 'GET', body = null) {
     if (body) {
         options.body = JSON.stringify(body);
     }
-
     return await fetch(host + uri, options);
 }
 
@@ -43,21 +51,28 @@ async function jwtFetchResponse(uri, method = 'GET', body = null) {
  * @returns {Promise<any>}
  */
 async function jwtFetch(uri, method = 'GET', body = null) {
+    await jwtLogin();
     return await jwtFetchResponse(uri, method, body)
         .then((response) => response.json());
 }
 
 /**
- * @param credentials
  * @returns {Promise<void>}
  */
-async function jwtLogin(credentials) {
+async function jwtLogin() {
     if (!localStorage.getItem('token')) {
-        await jwtFetchToken(credentials);
+        await jwtFetchToken();
     } else {
         let response = await jwtFetchResponse('/private/test');
         if (401 === response.status) {
-            await jwtFetchToken(credentials);
+            await jwtFetchToken();
         }
     }
+}
+
+/**
+ * @returns {boolean}
+ */
+function jwtSuccess() {
+    return localStorage.token !== 'invalid';
 }
