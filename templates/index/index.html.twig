@@ -1,17 +1,4 @@
 {% extends 'base.html.twig' %}
-
+{% block js %}<script src="{{ asset('js/aftaa.ru/index.js') }}?t={{ 'now'|date('U') }}"></script>{% endblock %}
 {% block body %}
-    {% include 'login/modal.html.twig' %}
-    <script>
-
-        (async function(){
-            await jwtLogin({
-                username: 'after@ya.ru',
-                password: 'darkside423'
-            });
-            console.log(localStorage.token);
-        })();
-    </script>
-
-
 {% endblock %}

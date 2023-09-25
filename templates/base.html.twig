@@ -13,9 +13,12 @@
             window.modal = new bootstrap.Modal('#modal');
         });
     </script>
-    <script src="{{ asset('js/jwt.js') }}?t={{ 'now'|date('U') }}"></script>
+    <script src="{{ asset('js/aftaa.ru/lib/modal-form.js') }}?t={{ 'now'|date('U') }}"></script>
+    <script src="{{ asset('js/aftaa.ru/lib/jwt.js') }}?t={{ 'now'|date('U') }}"></script>
+    {% block js %}{% endblock %}
 </head>
 <body>
+{% include 'login/modal.html.twig' %}
 <div class="container">
     {% block body %}{% endblock %}
 </div>
