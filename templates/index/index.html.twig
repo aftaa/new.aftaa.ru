@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <script>
+        delete localStorage.token;
+
+        let connection = new jwt(function () {
+            // let username = prompt('E-mail');
+            // let password = prompt('Password');
+            return {
+                username: 'after@ya.ru',
+                password: 'darkside423'
+            }
+        });
+
+        blocks = connection.tryFetch('private/blocks', 'POST');
+        console.log(blocks);
+    </script>
+{% endblock %}
