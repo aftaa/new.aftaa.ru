@@ -1,3 +1,7 @@
+/**
+ * @param credentials
+ * @returns {Promise<void>}
+ */
 async function jwtFetchToken(credentials) {
     let response = await fetch(host + '/login_check', {
         method: 'POST',
@@ -9,6 +13,12 @@ async function jwtFetchToken(credentials) {
     console.log('Received access token ' + localStorage.token);
 }
 
+/**
+ * @param uri
+ * @param method
+ * @param body
+ * @returns {Promise<Response>}
+ */
 async function jwtFetchResponse(uri, method = 'GET', body = null) {
     let options = {
         method: method,
@@ -24,11 +34,21 @@ async function jwtFetchResponse(uri, method = 'GET', body = null) {
     return await fetch(host + uri, options);
 }
 
+/**
+ * @param uri
+ * @param method
+ * @param body
+ * @returns {Promise<any>}
+ */
 async function jwtFetch(uri, method = 'GET', body = null){
     return await jwtFetchResponse(uri, method, body)
         .then((response) => response.json());
 }
 
+/**
+ * @param credentials
+ * @returns {Promise<void>}
+ */
 async function jwtLogin(credentials) {
     if (!localStorage.getItem('token')) {
         await jwtFetchToken(credentials);
