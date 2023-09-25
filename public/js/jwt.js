@@ -1,6 +1,6 @@
 /**
  * @param credentials
- * @returns {Promise<void>}
+ * @returns {Promise<boolean>}
  */
 async function jwtFetchToken(credentials) {
     let response = await fetch(host + '/login_check', {
@@ -11,6 +11,7 @@ async function jwtFetchToken(credentials) {
     let answer = await response.json();
     localStorage.setItem('token', answer.token);
     console.log('Received access token ' + localStorage.token);
+    return true;
 }
 
 /**
