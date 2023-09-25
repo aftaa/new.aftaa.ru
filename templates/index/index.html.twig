@@ -2,18 +2,24 @@
 
 {% block body %}
     <script>
-        delete localStorage.token;
 
-        let connection = new jwt(function () {
-            // let username = prompt('E-mail');
-            // let password = prompt('Password');
-            return {
+        (async function(){
+            let credentials = {
                 username: 'after@ya.ru',
                 password: 'darkside423'
-            }
-        });
+            };
+            //await jwtFetchToken(credentials);
 
-        blocks = connection.tryFetch('private/blocks', 'POST');
-        console.log(blocks);
+            let response = await fetch(host + '/private/bloks', {
+                method: 'POST',
+                headers: {
+                    'Authorization': 'Beaver' + localStorage
+                }
+            })
+            let answer = response.json();
+
+
+        })();
+
     </script>
 {% endblock %}

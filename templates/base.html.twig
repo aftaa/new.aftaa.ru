@@ -7,8 +7,10 @@
         {% block stylesheets %}
         {% endblock %}
 
-        <script>var host = '{{ api_host }}';</script>
+        <script src="{{ asset('js/jquery-3.7.1.js') }}"></script>
+        <script>window.host = '{{ api_host }}';</script>
         <script src="{{ asset('js/jwt.js') }}?t={{ 'now'|date('U') }}"></script>
+
         {% block javascripts %}
         {% endblock %}
     </head>

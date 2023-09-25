@@ -88,3 +88,39 @@ class jwt {
         return answer.token;
     }
 }
+
+async function jwtFetchToken(credentials) {
+    let response = await fetch(host + '/login_check', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(credentials)
+    })
+    let answer = await response.json();
+    localStorage.setItem('token', answer.token);
+}
+
+async function jwtFetchResponse(uri, method, body = null) {
+    if (!localStorage.getItem('token')) {
+        await jwtFetchToken();
+    }
+
+    let options = {
+        method: method,
+        headers: {
+            'Authorisation': 'Beaver ' + localStorage.getItem('token');
+        }
+    };
+
+    if (body) {
+        options.body = JSON.stringify(body);
+    }
+
+    return await fetch(host + uri, options);
+}
+
+async function jwtTestFetch() {
+    let response = await jwtFetchResponse('/private/blocks', 'POST');
+    if (401 === response.status) {
+
+    }
+}
