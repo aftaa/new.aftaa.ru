@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="31873c2a-92ba-4e6f-a2f2-ebd415f338b2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/IndexController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +176,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "js.last.introduce.type": "LET",
-    "last_opened_file_path": "/var/www/new.aftaa.ru/public/js",
+    "last_opened_file_path": "/var/www/new.aftaa.ru/templates/link",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -193,6 +194,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/link" />
+      <recent name="$PROJECT_DIR$/templates/block" />
       <recent name="$PROJECT_DIR$/public/js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -217,7 +220,7 @@
       <workItem from="1695463877946" duration="4506000" />
       <workItem from="1695468545407" duration="15772000" />
       <workItem from="1695571529775" duration="1258000" />
-      <workItem from="1695575570345" duration="61018000" />
+      <workItem from="1695575570345" duration="61851000" />
     </task>
     <servers />
   </component>
