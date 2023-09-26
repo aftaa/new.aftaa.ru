@@ -1,8 +1,8 @@
 $(function () {
-    if (true) {
-        // localStorage.token += 'asd';
-        // delete localStorage.username;
-        // delete localStorage.password;
+    if (false) {
+        localStorage.token += 'asd';
+        delete localStorage.username;
+        delete localStorage.password;
     }
 
     $('#email').val(localStorage.username);
@@ -20,7 +20,7 @@ $(function () {
             if (jwtSuccess()) {
                 $('#email,#password').addClass('is-valid');
                 setTimeout(function () {
-                    modal.hide();
+                    modalLogin.hide();
                     $('#email,#password').removeClass('is-valid');
                 }, 1500);
                 await functions.getData();

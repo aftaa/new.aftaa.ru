@@ -1,7 +1,7 @@
 $(function () {
         window.functions = {
             getData: async function () {
-                window.data = await jwtFetch('/private/index');
+                window.data = await jwtFetch('/private/data/index');
                 if (jwtSuccess()) {
                     let vm = new Vue({
                         el: '#app',
@@ -29,7 +29,7 @@ $(function () {
 
                     vm.loadIndexData();
                 } else {
-                    modal.show();
+                    modalLogin.show();
                 }
             }
         }

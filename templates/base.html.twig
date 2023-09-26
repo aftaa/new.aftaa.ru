@@ -12,10 +12,10 @@
     <script>
         $(function () {
             window.host = '{{ api_host }}';
-            window.modal = new bootstrap.Modal('#modal');
+            window.modalLogin = new bootstrap.Modal('#modalLogin');
         });
     </script>
-    <script src="{{ asset('js/aftaa.ru/lib/modal-form.js') }}?t={{ 'now'|date('U') }}"></script>
+    <script src="{{ asset('js/aftaa.ru/login.js') }}?t={{ 'now'|date('U') }}"></script>
     <script src="{{ asset('js/aftaa.ru/lib/jwt.js') }}?t={{ 'now'|date('U') }}"></script>
     {% block js %}{% endblock %}
 </head>

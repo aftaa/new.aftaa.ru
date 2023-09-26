@@ -1,11 +1,21 @@
-<form id="form">
+<form id="formBlock">
     <div class="mb-3">
-        <label for="email" class="form-label">Адрес электронной почты</label>
-        <input type="email" class="form-control" id="email" required>
+        <label for="name" class="form-label">{{ 'Name'|trans }}</label>
+        <input type="text" class="form-control" id="name" required>
     </div>
     <div class="mb-3">
-        <label for="password" class="form-label">Пароль</label>
-        <input type="password" class="form-control" id="password" required>
+        <label for="col" class="form-label">{{ 'Column'|trans }}</label>
+        <input type="number" class="form-control" id="col" required>
     </div>
-    <button type="submit" class="btn btn-primary">Войти</button>
+    <div class="mb-3">
+        <label for="sort" class="form-label">{{ 'Sort'|trans }}</label>
+        <input type="number" class="form-control" id="sort" required>
+    </div>
+    <div class="mb-3">
+        <label for="private" class="form-check-label">
+            <input type="checkbox" class="form-check-input" id="private">
+            {{ 'Private'|trans }}
+        </label>
+    </div>
+    <button type="submit" class="btn btn-primary">{{ 'Send'|trans }}</button>
 </form>
