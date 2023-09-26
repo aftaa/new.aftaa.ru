@@ -9,7 +9,7 @@ $(function () {
                             columns: {},
                             top: {},
 
-                            debug: true,
+                            // debug: true,
                             requestDataFail: false,
                             status: 200,
 
