@@ -16,11 +16,9 @@ $(function () {
                             seen: true,
                         },
                         methods: {
-                            conversion(event) {
+                            async conversion(event) {
                                 let id = event.target.dataset.id;
-                                (async function () {
-                                    await jwtFetch('/private/link/view/' + id);
-                                })();
+                                await jwtFetch('/private/link/view/' + id);
                             },
                             loadIndexData() {
                                 vm.columns = data.data.columns;
