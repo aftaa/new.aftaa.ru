@@ -17,7 +17,7 @@ async function jwtFetchToken() {
     })
     let answer = await response.json();
     if (answer.token) {
-        console.log('Received token');
+        console.log('Received token ' + answer.token);
         localStorage.setItem('token', answer.token);
     } else {
         localStorage.setItem('token', 'invalid');

@@ -15,3 +15,7 @@ div.block {
     padding: 0 0 .5em 1em;
     border-radius: 1em;
 }
+
+.nowrap {
+    white-space: nowrap;
+}

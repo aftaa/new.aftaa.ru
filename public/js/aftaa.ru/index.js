@@ -25,7 +25,6 @@ $(function () {
                             loadIndexData() {
                                 vm.columns = data.data.columns;
                                 vm.top = data.data.top;
-                                console.log(data)
                             }
                         }
                     });
@@ -40,5 +39,4 @@ $(function () {
 
         (async () => await functions.getData())();
     }
-)
-;
+);

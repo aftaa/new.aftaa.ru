@@ -9,12 +9,13 @@
                 <div class="col col-sm-12 col-md-6 col-lg-2">
                     <div class="alert-info top">
                         <h3 class="mt-3">Top</h3>
-                        <div class="text-nowrap" class="mb-1" v-for="link in top">
+                        <div class="mb-1 nowrap" v-for="link in top">
                             <a v-bind:href="link.icon" target="_blank">
                                 <img alt="" v-bind:src="link.icon" width="16" height="16">
                             </a>&nbsp;
                             <a v-bind:href="link.href" target="_blank" v-html="link.name"
                                v-bind:data-id="link.id" v-on:click="conversion"></a>
+                            (<small class="small" v-html="link.count"></small>)
                         </div>
                     </div>
                     <br>
