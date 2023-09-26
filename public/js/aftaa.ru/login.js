@@ -12,7 +12,7 @@ $(function () {
         $(this).removeClass('is-invalid');
     })
 
-    $('#form').on('submit', function () {
+    $('#formLogin').on('submit', function () {
         localStorage.username = $('#email').val();
         localStorage.password = $('#password').val();
         (async function () {
