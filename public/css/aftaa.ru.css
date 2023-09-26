@@ -1,0 +1,17 @@
+.block {
+    width: 200px;
+}
+
+.row {
+    margin-bottom: 3em;
+}
+
+div.block {
+    white-space: nowrap;
+}
+
+.top {
+    background: #cff4fc;
+    padding: 0 0 .5em 1em;
+    border-radius: 1em;
+}
