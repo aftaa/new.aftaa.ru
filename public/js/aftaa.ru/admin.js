@@ -8,6 +8,7 @@ $(function () {
                         data: {
                             columns: {},
                             trash: {},
+                            views: {},
 
                             // debug: true,
                             requestDataFail: false,
@@ -23,7 +24,17 @@ $(function () {
                             loadAdminData() {
                                 vm.columns = data.data.columns;
                                 vm.trash = data.data.trash;
-                            }
+                                vm.views = data.data.views;
+                            },
+
+                            blocks: {
+                                new: vmBlock.new,
+                                add: vmBlock.add,
+                                load: vmBlock.load,
+                                save: vmBlock.save,
+                            },
+
+                            loadBlock: vmBlock.load
                         }
                     });
 

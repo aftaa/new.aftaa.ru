@@ -13,7 +13,7 @@ let vmBlock = new Vue({
         },
 
         load: function () {
-
+            alert('load')
         },
 
         save: function () {

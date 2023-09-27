@@ -2,6 +2,14 @@
     width: 200px;
 }
 
+.admin-block {
+    width: 275px;
+}
+
+.color-gray {
+    color: gray;
+}
+
 .row {
     margin-bottom: 3em;
 }
