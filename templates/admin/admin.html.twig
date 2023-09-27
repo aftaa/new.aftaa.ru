@@ -4,9 +4,9 @@
     <link rel="stylesheet" href="{{ asset('css/le-frog/theme.css') }}">
 {% endblock %}
 {% block js %}
-    <script src="{{ asset('js/aftaa.ru/block.js') }}?t={{ 'now'|date('U') }}"></script>
-    <script src="{{ asset('js/aftaa.ru/link.js') }}?t={{ 'now'|date('U') }}"></script>
-    <script src="{{ asset('js/aftaa.ru/admin.js') }}?t={{ 'now'|date('U') }}"></script>
+    <script src="{{ asset('js/block.js') }}?t={{ 'now'|date('U') }}"></script>
+    <script src="{{ asset('js/link.js') }}?t={{ 'now'|date('U') }}"></script>
+    <script src="{{ asset('js/admin.js') }}?t={{ 'now'|date('U') }}"></script>
 {% endblock %}
 {% block body %}
     {% include 'block/modal.html.twig' %}
