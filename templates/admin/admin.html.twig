@@ -8,6 +8,8 @@
 {% endblock %}
 {% block js %}
     <script src="{{ asset('js/jquery-ui-1.12.1/jquery-ui.js') }}"></script>
+    <script src="{{ asset('js/aftaa.ru/block.js') }}?t={{ 'now'|date('U') }}"></script>
+    <script src="{{ asset('js/aftaa.ru/link.js') }}?t={{ 'now'|date('U') }}"></script>
     <script src="{{ asset('js/aftaa.ru/admin.js') }}?t={{ 'now'|date('U') }}"></script>
 {% endblock %}
 {% block body %}
