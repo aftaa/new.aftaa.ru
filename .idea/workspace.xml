@@ -6,6 +6,59 @@
   <component name="ChangeListManager">
     <list default="true" id="31873c2a-92ba-4e6f-a2f2-ebd415f338b2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/aftaa.ru.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/aftaa.ru.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/jquery-ui-themes-1.12.1/AUTHORS.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/jquery-ui-themes-1.12.1/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/jquery-ui-themes-1.12.1/images/ui-icons_444444_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/jquery-ui-themes-1.12.1/images/ui-icons_555555_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/jquery-ui-themes-1.12.1/images/ui-icons_777620_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/jquery-ui-themes-1.12.1/images/ui-icons_777777_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/jquery-ui-themes-1.12.1/images/ui-icons_cc0000_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/jquery-ui-themes-1.12.1/images/ui-icons_ffffff_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/jquery-ui-themes-1.12.1/jquery-ui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/jquery-ui-themes-1.12.1/jquery-ui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/jquery-ui-themes-1.12.1/jquery-ui.structure.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/jquery-ui-themes-1.12.1/jquery-ui.structure.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/jquery-ui-themes-1.12.1/jquery-ui.theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/jquery-ui-themes-1.12.1/jquery-ui.theme.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/jquery-ui-themes-1.12.1/themes/le-frog/images/ui-bg_diagonals-small_0_aaaaaa_40x40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/jquery-ui-themes-1.12.1/themes/le-frog/images/ui-bg_diagonals-thick_15_444444_40x40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/jquery-ui-themes-1.12.1/themes/le-frog/images/ui-bg_diagonals-thick_95_ffdc2e_40x40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/jquery-ui-themes-1.12.1/themes/le-frog/images/ui-bg_glass_55_fbf5d0_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/jquery-ui-themes-1.12.1/themes/le-frog/images/ui-bg_highlight-hard_30_285c00_1x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/jquery-ui-themes-1.12.1/themes/le-frog/images/ui-bg_highlight-soft_33_3a8104_1x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/jquery-ui-themes-1.12.1/themes/le-frog/images/ui-bg_highlight-soft_50_4eb305_1x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/jquery-ui-themes-1.12.1/themes/le-frog/images/ui-bg_highlight-soft_60_4ca20b_1x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/jquery-ui-themes-1.12.1/themes/le-frog/images/ui-bg_inset-soft_10_285c00_1x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/jquery-ui-themes-1.12.1/themes/le-frog/images/ui-icons_4eb305_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/jquery-ui-themes-1.12.1/themes/le-frog/images/ui-icons_72b42d_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/jquery-ui-themes-1.12.1/themes/le-frog/images/ui-icons_cd0a0a_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/jquery-ui-themes-1.12.1/themes/le-frog/images/ui-icons_ffffff_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/jquery-ui-themes-1.12.1/themes/le-frog/jquery-ui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/jquery-ui-themes-1.12.1/themes/le-frog/jquery-ui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/jquery-ui-themes-1.12.1/themes/le-frog/theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/aftaa.ru/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/aftaa.ru/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/aftaa.ru/block.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/aftaa.ru/block.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery-ui-1.12.1/AUTHORS.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery-ui-1.12.1/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery-ui-1.12.1/external/jquery/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery-ui-1.12.1/images/ui-icons_444444_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery-ui-1.12.1/images/ui-icons_555555_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery-ui-1.12.1/images/ui-icons_777620_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery-ui-1.12.1/images/ui-icons_777777_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery-ui-1.12.1/images/ui-icons_cc0000_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery-ui-1.12.1/images/ui-icons_ffffff_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery-ui-1.12.1/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery-ui-1.12.1/jquery-ui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery-ui-1.12.1/jquery-ui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery-ui-1.12.1/jquery-ui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery-ui-1.12.1/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery-ui-1.12.1/jquery-ui.structure.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery-ui-1.12.1/jquery-ui.structure.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery-ui-1.12.1/jquery-ui.theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery-ui-1.12.1/jquery-ui.theme.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery-ui-1.12.1/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/admin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/admin.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,7 +273,7 @@
       <workItem from="1695468545407" duration="15772000" />
       <workItem from="1695571529775" duration="1258000" />
       <workItem from="1695575570345" duration="72028000" />
-      <workItem from="1695803862082" duration="2135000" />
+      <workItem from="1695803862082" duration="4405000" />
     </task>
     <servers />
   </component>
