@@ -1,29 +1,36 @@
 {% extends 'base.html.twig' %}
+{% block css %}
+    <link rel="stylesheet" href="{{ asset('js/jquery-ui-1.12.1/jquery-ui.css') }}">
+    <link rel="stylesheet" href="{{ asset('js/jquery-ui-1.12.1/jquery-ui.structure.css') }}">
+    <link rel="stylesheet" href="{{ asset('js/jquery-ui-1.12.1/jquery-ui.theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/jquery-ui-themes-1.12.1/themes/le-frog/jquery-ui.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/jquery-ui-themes-1.12.1/themes/le-frog/theme.css') }}">
+{% endblock %}
 {% block js %}
+    <script src="{{ asset('js/jquery-ui-1.12.1/jquery-ui.js') }}"></script>
     <script src="{{ asset('js/aftaa.ru/admin.js') }}?t={{ 'now'|date('U') }}"></script>
 {% endblock %}
 {% block body %}
     {% include 'block/modal.html.twig' %}
-    {% include 'link/modal.html.twig' %}
+{#    {% include 'link/modal.html.twig' %} #}
 <main id="app">
     <div class="container">
         <div class="row">
-            <div v-for="(column, colNum) in columns">
-                <div class="block col-sm-6 col-lg-4" v-for="(block, blockName) in column">
-
-                    <div class="ui-icon ui-icon-key private" style="float: left;" v-if="block.block_private"></div>
+            <div class="block col-sm-6 col-lg-4" v-for="blocks in columns">
+                <div v-for="block in blocks">
+                    <div class="ui-icon ui-icon-key private" style="float: left;" v-if="block.private"></div>
                     <h3 class="mt-3">
-                        <span v-html="blockName"></span>
+                        <span v-html="block.name"></span>
 
-                        <a href="#" v-bind:data-id="block.block_id" v-on:click="editBlock"
+                        <a href="#" v-bind:data-id="block.id" v-on:click="editBlock"
                            class="ui-icon ui-icon-pencil">
                         </a>
 
-                        <a href="#" v-bind:data-id="block.block_id" v-on:click="unlinkBlock"
+                        <a href="#" v-bind:data-id="block.id" v-on:click="unlinkBlock"
                            class="ui-icon ui-icon-trash">
                         </a>
 
-                        <a href="#" v-bind:data-col-num="colNum" v-on:click="addBlock"
+                        <a href="#" v-bind:data-col-num="block.col" v-on:click="addBlock"
                            class="ui-icon ui-icon-plus">
                         </a>
                     </h3>
@@ -34,32 +41,28 @@
                                 <a v-bind:href="link.icon" target="_blank">
                                     <img alt="" v-bind:src="link.icon" width="16" height="16">
                                 </a>&nbsp;
-
                             </td>
                             <td>
-                                <div class="ui-icon ui-icon-key private" v-if="link.link_private"></div>
-
-                                <a v-bind:href="link.href" target="_blank" v-html="link.link_name"
-                                   v-bind:data-id="link.link_id" v-on:click="conversion" v-bind:title="link.id"></a>
+                                <div class="ui-icon ui-icon-key private" v-if="link.private"></div>
+                                <a v-bind:href="link.href" target="_blank" v-html="link.name"
+                                   v-bind:data-id="link.id" v-on:click="conversion" v-bind:title="link.id"></a>
                             </td>
                             <td width="20">
-                                <a href="#" v-bind:data-id="link.link_id" v-on:click="editLink"
+                                <a href="#" v-bind:data-id="link.id" v-on:click="editLink"
                                    class="ui-icon ui-icon-pencil">
                                 </a>
                             </td>
                             <td width="20">
-                                <a href="#" v-bind:data-id="link.link_id" v-on:click="unlinkLink"
+                                <a href="#" v-bind:data-id="link.id" v-on:click="unlinkLink"
                                    class="ui-icon ui-icon-trash">
                                 </a>
                             </td>
                         </tr>
                     </table>
-                    <a href="#" v-bind:data-block-id="block.block_id" v-on:click="addLink"
+                    <a href="#" v-bind:data-block-id="block.id" v-on:click="addLink"
                        class="ui-icon ui-icon-plus">
                     </a>
-
                     <br>
-
                 </div>
             </div>
         </div>
