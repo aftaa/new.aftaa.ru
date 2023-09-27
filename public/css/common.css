@@ -3,7 +3,7 @@
 }
 
 .admin-block {
-    width: auto;
+    width: 275px;
 }
 
 .color-gray {
@@ -30,4 +30,13 @@ div.block {
 
 .table td {
     padding: 0;
+}
+
+#spinner-wrapper {
+    position: absolute;
+    margin: 25% 50%;
+}
+
+#spinner {
+    display: none;
 }

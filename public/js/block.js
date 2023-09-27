@@ -20,16 +20,18 @@ $(function () {
             },
 
             load: async function (event) {
+                showSpinner();
                 let id = event.target.dataset.id;
-                let t = this;
-                jwtFetch('/blocks/' + id)
-                    .then((data) => {
-                        t.id = data.id;
-                        t.name = data.name;
-                        t.col = data.col;
-                        t.sort = data.sort;
-                        t.private = data.private;
+                jwtFetch('/private/blocks/' + id)
+                    .then((block) => {
+                        this.id = block.id;
+                        alert([block.name, this.name])
+                        this.name = block.name;
+                        this.col = block.col;
+                        this.sort = block.sort;
+                        this.private = block.private;
                         this.modal.show();
+                        hideSpinner();
                     });
             },
 
