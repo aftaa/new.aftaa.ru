@@ -45,6 +45,7 @@ $(function () {
                     .catch(() => {
                         stopSpinner();
                         this.modal.hide();
+                        vm.loadAdminData();
                     });
             },
 
