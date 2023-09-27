@@ -18,7 +18,8 @@ $(function () {
                         methods: {
                             async conversion(event) {
                                 let id = event.target.dataset.id;
-                                await jwtFetch('/private/link/view/' + id);
+                                jwtFetch('/private/link/view/' + id)
+                                    .then((data) => vm.top[id].count = data.views);
                             },
                             loadIndexData() {
                                 vm.columns = data.data.columns;
