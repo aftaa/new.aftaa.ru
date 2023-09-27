@@ -40,3 +40,7 @@ div.block {
 #spinner {
     display: none;
 }
+
+.float-right {
+    float: right;
+}

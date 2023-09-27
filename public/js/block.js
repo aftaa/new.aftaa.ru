@@ -1,6 +1,6 @@
 $(function () {
     window.vmBlock = new Vue({
-        el: '#modalBlock',
+        el: '#formBlock',
         data: {
             id: null,
             name: '',
@@ -19,24 +19,24 @@ $(function () {
 
             },
 
-            load: async function (event) {
-                showSpinner();
+            load: function (event) {
+                spinner();
                 let id = event.target.dataset.id;
-                jwtFetch('/private/blocks/' + id)
-                    .then((block) => {
+                jwtFetch('/private/block/' + id)
+                    .then(block => {
                         this.id = block.id;
-                        alert([block.name, this.name])
                         this.name = block.name;
                         this.col = block.col;
                         this.sort = block.sort;
                         this.private = block.private;
                         this.modal.show();
-                        hideSpinner();
+                        stopSpinner();
                     });
             },
 
-            save: function () {
-
+            save: function (event) {
+                spinner();
+                jwtFetch('')
             },
 
             unlink: function () {

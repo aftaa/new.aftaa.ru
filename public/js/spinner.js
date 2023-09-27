@@ -1,7 +1,7 @@
-function showSpinner() {
+function spinner() {
     $('#spinner').show();
 }
 
-function hideSpinner() {
+function stopSpinner() {
     $('#spinner').hide();
 }

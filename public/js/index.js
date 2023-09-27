@@ -9,7 +9,7 @@ $(function () {
                             columns: {},
                             top: {},
 
-                            // debug: true,
+                            debug: true,
                             requestDataFail: false,
                             status: 200,
 
@@ -24,7 +24,7 @@ $(function () {
                             loadIndexData() {
                                 vm.columns = data.data.columns;
                                 vm.top = data.data.top;
-                                console.log(vm.top)
+                                stopSpinner();
                             }
                         }
                     });

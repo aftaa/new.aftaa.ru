@@ -1,7 +1,7 @@
 $(function () {
         window.functions = {
             getData: async function () {
-                showSpinner();
+                spinner();
                 window.data = await jwtFetch('/private/data/admin');
                 if (jwtSuccess()) {
                     let vm = new Vue({
@@ -11,7 +11,7 @@ $(function () {
                             trash: {},
                             views: {},
 
-                            // debug: true,
+                            debug: true,
                             requestDataFail: false,
                             status: 200,
 
@@ -26,7 +26,7 @@ $(function () {
                                 vm.columns = data.data.columns;
                                 vm.trash = data.data.trash;
                                 vm.views = data.data.views;
-                                hideSpinner();
+                                stopSpinner();
                             },
 
                             loadBlock: vmBlock.load,
