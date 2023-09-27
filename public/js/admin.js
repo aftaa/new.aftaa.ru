@@ -4,7 +4,7 @@ $(function () {
                 spinner();
                 window.data = await jwtFetch('/private/data/admin');
                 if (jwtSuccess()) {
-                    let vm = new Vue({
+                    window.vm = new Vue({
                         el: '#app',
                         data: {
                             columns: {},

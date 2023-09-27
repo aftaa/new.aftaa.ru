@@ -1,6 +1,7 @@
 $(function () {
         window.functions = {
             getData: async function () {
+                spinner();
                 window.data = await jwtFetch('/private/data/index');
                 if (jwtSuccess()) {
                     let vm = new Vue({
