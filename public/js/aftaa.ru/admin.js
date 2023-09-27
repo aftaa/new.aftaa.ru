@@ -27,14 +27,13 @@ $(function () {
                                 vm.views = data.data.views;
                             },
 
-                            blocks: {
-                                new: vmBlock.new,
-                                add: vmBlock.add,
-                                load: vmBlock.load,
-                                save: vmBlock.save,
-                            },
+                            loadBlock: vmBlock.load,
+                            unlinkBlock: vmBlock.unlink,
+                            newBlock: vmBlock.new,
 
-                            loadBlock: vmBlock.load
+                            loadLink: vmLink.load,
+                            unlinkLink: vmLink.unlink,
+                            newLink: vmLink.new
                         }
                     });
 

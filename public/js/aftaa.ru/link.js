@@ -1,35 +1,43 @@
-let vmLink = new Vue({
-    el: '#modalLink',
-    data: {
-
-    },
-    methods: {
-        new: function () {
-
+$(function () {
+    window.vmLink = new Vue({
+        el: '#modalLink',
+        data: {
+            'id': null,
+            'block_id': 0,
+            'name': '',
+            'href': '',
+            'icon': '',
+            'private': false,
+            'blocks': {},
         },
+        methods: {
+            new: function () {
 
-        add: function() {
+            },
 
-        },
+            add: function() {
 
-        load: function () {
+            },
 
-        },
+            load: function () {
 
-        save: function () {
+            },
 
-        },
+            save: function () {
 
-        unlink: function () {
+            },
 
-        },
+            unlink: function () {
 
-        recovery: function () {
+            },
 
-        },
+            recovery: function () {
 
-        getBlock: function () {
+            },
 
+            getBlocks: function () {
+
+            }
         }
-    }
+    });
 });

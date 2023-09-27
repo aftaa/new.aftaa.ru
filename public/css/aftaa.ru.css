@@ -3,7 +3,7 @@
 }
 
 .admin-block {
-    width: 275px;
+    width: auto;
 }
 
 .color-gray {
@@ -26,4 +26,8 @@ div.block {
 
 .nowrap {
     white-space: nowrap;
+}
+
+.table td {
+    padding: 0;
 }
