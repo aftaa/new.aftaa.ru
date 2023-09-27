@@ -4,7 +4,7 @@
     <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="12">
+          <list size="13">
             <item index="0" class="java.lang.String" itemvalue="v-for" />
             <item index="1" class="java.lang.String" itemvalue="v-html" />
             <item index="2" class="java.lang.String" itemvalue="v-bind:href" />
@@ -17,6 +17,7 @@
             <item index="9" class="java.lang.String" itemvalue="v-bind:data-col-num" />
             <item index="10" class="java.lang.String" itemvalue="v-bind:title" />
             <item index="11" class="java.lang.String" itemvalue="v-bind:data-block-id" />
+            <item index="12" class="java.lang.String" itemvalue="v-bind:key" />
           </list>
         </value>
       </option>
