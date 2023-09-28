@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="admin-block col-sm-6 col-lg-4" v-for="blocks in columns">
                     <div v-for="block in blocks">
-                        <div class="ui-icon ui-icon-key private" style="float: left;" v-if="block.private"></div>
+                        <div class="ui-icon ui-icon-key private float-left" v-if="block.private"></div>
                         <h3 class="mt-3">
                             <span v-html="block.name" v-bind:title="block.id"></span>
 

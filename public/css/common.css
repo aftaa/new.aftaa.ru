@@ -46,6 +46,10 @@ div.block {
     float: right;
 }
 
+.float-left {
+    float: left;
+}
+
 .display-none {
     display: none;
 }
