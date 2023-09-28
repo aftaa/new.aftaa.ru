@@ -2,7 +2,9 @@ $(function () {
         window.functions = {
             getData: async function () {
                 spinner();
-                window.data = await jwtFetch('/private/data/index');
+                await jwtFetch('/private/data/index')
+                    .then(response => response.json())
+                    .then(data => window.data = data);
                 if (jwtSuccess()) {
                     let vm = new Vue({
                         el: '#app',
@@ -20,6 +22,7 @@ $(function () {
                             async conversion(event) {
                                 let id = event.target.dataset.id;
                                 jwtFetch('/private/link/view/' + id)
+                                    .then(response => response.json())
                                     .then((data) => vm.top['s' + id].count = data.views);
                             },
                             loadIndexData() {

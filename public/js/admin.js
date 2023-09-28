@@ -10,21 +10,24 @@ $(function () {
             requestDataFail: false,
             status: 200,
 
-            seen: true,
+            seen: false,
         },
         methods: {
             async conversion(event) {
                 let id = event.target.dataset.id;
-                await jwtFetch('/private/link/view/' + id);
+                jwtFetch('/private/link/view/' + id)
+                    .then(response => response.json())
+                    .then((data) => vm.top['s' + id].count = data.views);
             },
             loadAdminData() {
                 spinner();
                 jwtFetch('/private/data/admin')
-                    .then((data) => {
-                        console.log(data)
-                        vm.columns = data.data.columns;
-                        vm.trash = data.data.trash;
-                        vm.views = data.data.views;
+                    .then(response => response.json())
+                    .then(data => {
+                        this.columns = data.columns;
+                        this.trash = data.trash;
+                        this.views = data.views;
+                        $('#app').removeClass('display-none');
                         stopSpinner();
                     });
             },

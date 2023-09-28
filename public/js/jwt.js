@@ -53,8 +53,8 @@ async function jwtFetchResponse(uri, method = 'GET', body = null) {
  */
 async function jwtFetch(uri, method = 'GET', body = null) {
     await jwtLogin();
-    return await jwtFetchResponse(uri, method, body)
-        .then((response) => response.json());
+    return jwtFetchResponse(uri, method, body);
+        // .then((response) => response.json());
 }
 
 /**
@@ -76,4 +76,11 @@ async function jwtLogin() {
  */
 function jwtSuccess() {
     return localStorage.token !== 'invalid';
+}
+
+function jwtExit() {
+    delete localStorage.username;
+    delete localStorage.password;
+    delete localStorage.token;
+    modalLogin.show();
 }

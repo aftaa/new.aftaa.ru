@@ -1,4 +1,4 @@
-<form id="formBlock" @submit="save">
+<form id="formBlock" @submit="submit">
     <div class="mb-3">
         <label for="name" class="form-label">{{ 'Name'|trans }}:</label>
         <input type="text" class="form-control" id="name" required v-model="name">
@@ -17,6 +17,6 @@
             {{ 'Private'|trans }}
         </label>
     </div>
-    <button type="submit" class="btn btn-primary float-right">{{ 'Send'|trans }}</button>
-    <button type="button" class="btn btn-secondary float-right" data-bs-dismiss="modal" style="margin-right: 1em;">Закрыть</button>
+    <button type="button" class="btn btn-secondary float-right" data-bs-dismiss="modal">{{ 'Close'|trans }}</button>
+    <button type="submit" class="btn btn-primary float-right" style="margin-right: 1em;">{{ 'Send'|trans }}</button>
 </form>

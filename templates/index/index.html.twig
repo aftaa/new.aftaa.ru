@@ -17,6 +17,10 @@
                                v-bind:data-id="link.id" v-on:click="conversion"></a>
                             (<small class="small" v-html="link.count"></small>)
                         </div>
+                        <hr size="1">
+                        <div class="alert-danger">
+                            <h3><a href="#" onclick="jwtExit(); return false;">{{ 'Logout'|trans }}</a></h3>
+                        </div>
                     </div>
                     <br>
                 </div>
