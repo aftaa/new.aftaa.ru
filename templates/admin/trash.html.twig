@@ -6,7 +6,7 @@
             <div v-for="block in blocks">
                 <div class="ui-icon ui-icon-key private float-left" v-if="block.private"></div>
                 <h3 class="mt-3">
-                    <span v-html="block.name"></span>
+                    <span v-html="block.name" v-bind:title="block.id"></span>
                     <a href="#" v-bind:data-id="block.id" v-on:click="recoveryBlock" class="ui-icon ui-icon-arrow-1-e-w">
                     </a>
                 </h3>

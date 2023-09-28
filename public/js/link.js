@@ -59,7 +59,6 @@ $(function () {
                             .then(link => {
                                 for (let key of this.keys) {
                                     this[key] = link[key];
-                                    console.log(key)
                                 }
                                 this.block_id = link.block.id;
                                 stopSpinner();

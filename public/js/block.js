@@ -31,7 +31,6 @@ $(function () {
 
                 if (!body.private) body.private = false;
 
-                console.log('add:', body);
                 jwtFetch(this.api, 'POST', body)
                     .then(() => {
                         stopSpinner();
@@ -63,7 +62,6 @@ $(function () {
                 for (let key of this.keys) {
                     body[key] = this[key];
                 }
-                console.log('save:', body);
                 jwtFetch(this.api + this.id, 'PUT', body)
                     .then(() => {
                         stopSpinner();
