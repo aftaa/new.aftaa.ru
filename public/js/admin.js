@@ -35,10 +35,12 @@ $(function () {
             loadBlock: vmBlock.load,
             unlinkBlock: vmBlock.unlink,
             newBlock: vmBlock.new,
+            recoveryBlock: vmBlock.recovery,
 
             loadLink: vmLink.load,
             unlinkLink: vmLink.unlink,
-            newLink: vmLink.new
+            newLink: vmLink.new,
+            recoveryLink: vmLink.recovery
         }
     });
 
