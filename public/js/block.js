@@ -22,15 +22,15 @@ $(function () {
             },
 
             add: function () {
-                // spinner();
+                spinner();
                 let body = {};
                 for (let key of this.keys) {
                     body[key] = this[key];
                 }
                 jwtFetch(this.api, 'POST', body)
                     .then(() => {
-                        // stopSpinner();
-                        // this.modal.hide();
+                        stopSpinner();
+                        this.modal.hide();
                         vm.loadAdminData();
                     });
             },
