@@ -1,7 +1,7 @@
 <form id="formLink" @submit="submit">
     <div class="mb-3">
         <label for="block_id" class="form-label">{{ 'Block'|trans }}</label>
-        <select v-model="block_id" class="form-select" id="block_id" required>
+        <select v-model.number="block_id" class="form-select" id="block_id" required>
             <option v-for="block in blocks" v-bind:value="block.id" v-html="block.name"></option>
         </select>
     </div>
@@ -15,7 +15,7 @@
     </div>
     <div class="mb-3">
         <label for="icon" class="form-label">{{ 'Icon'|trans }}</label>
-        <input type="text" class="form-control" id="icon" required v-model="icon">
+        <input type="text" class="form-control" id="icon" v-model="icon">
     </div>
     <div class="mb-3">
         <label class="form-check-label">

@@ -2,8 +2,8 @@ $(function () {
     window.vmLink = new Vue({
         el: '#formLink',
         data: {
-            id: null,
-            block_id: null,
+            id: 0,
+            block_id: 0,
             name: '',
             href: '',
             icon: '',
@@ -32,13 +32,13 @@ $(function () {
             add: function () {
                 disInputs();
                 spinner();
-                let body = {};
-                for (let key of this.keys) {
-                    body[key] = this[key];
-                }
-
-                if (!body.private) body.private = false;
-
+                let body = {
+                    block_id: Number(this.block_id),
+                    name: this.name,
+                    href: this.href,
+                    icon: this.icon ?? '',
+                    private: this.icon ?? false
+                };
                 jwtFetch(this.api, 'POST', body)
                     .then(() => {
                         stopSpinner();
