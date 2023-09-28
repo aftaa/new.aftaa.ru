@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31873c2a-92ba-4e6f-a2f2-ebd415f338b2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/block.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/block.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/link.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/link.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/link/form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/link/form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/trash.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/trash.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,7 +226,7 @@
       <workItem from="1695571529775" duration="1258000" />
       <workItem from="1695575570345" duration="72028000" />
       <workItem from="1695803862082" duration="64122000" />
-      <workItem from="1695928416366" duration="2871000" />
+      <workItem from="1695928416366" duration="9468000" />
     </task>
     <servers />
   </component>
