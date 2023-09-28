@@ -6,10 +6,10 @@ function stopSpinner() {
     $('#spinner').hide();
 }
 
-function disableInputs() {
+function disInputs() {
     $('input,textarea,select,button').attr({disabled: true});
 }
 
-function enableInputs() {
+function enInputs() {
     $('input,textarea,select,button').attr({disabled: false});
 }

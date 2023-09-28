@@ -22,17 +22,24 @@ $(function () {
             },
 
             add: function () {
+                disInputs();
                 spinner();
                 let body = {};
                 for (let key of this.keys) {
                     body[key] = this[key];
                 }
+
+                if (!body.private) body.private = false;
+
+                console.log('add:', body);
                 jwtFetch(this.api, 'POST', body)
                     .then(() => {
                         stopSpinner();
                         this.modal.hide();
+                        enInputs();
                         vm.loadAdminData();
                     });
+                return false;
             },
 
             load: function (event) {
@@ -44,38 +51,48 @@ $(function () {
                         for (let key of this.keys) {
                             this[key] = block[key];
                         }
-
-                        this.modal.show();
                         stopSpinner();
+                        this.modal.show();
                     });
             },
 
             save: function (event) {
-                $('input,textarea,select,button').attr({disabled: true});
+                disInputs();
                 spinner();
                 let body = {};
                 for (let key of this.keys) {
                     body[key] = this[key];
                 }
+                console.log('save:', body);
                 jwtFetch(this.api + this.id, 'PUT', body)
                     .then(() => {
                         stopSpinner();
                         this.modal.hide();
-                        $('input,textarea,select,button').attr({disabled: false});
+                        enInputs();
+                        vm.loadAdminData();
+                    });
+                return false;
+            },
+
+            unlink: function (event) {
+                spinner();
+                jwtFetch(this.api + event.target.dataset.id, 'DELETE')
+                    .then(() => {
+                        stopSpinner();
                         vm.loadAdminData();
                     });
             },
 
-            unlink: function () {
-
-            },
-
             recovery: function () {
-
+                spinner();
+                jwtFetch(this.api + event.target.dataset.id, 'PATCH')
+                    .then(() => {
+                        stopSpinner();
+                        vm.loadAdminData();
+                    });
             },
 
             submit: function (event) {
-                console.log('id=', this.id);
                 this.id ? this.save(event) : this.add();
             }
         }
