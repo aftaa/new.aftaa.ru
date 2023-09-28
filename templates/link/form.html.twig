@@ -1,7 +1,28 @@
-<form id="formLink">
+<form id="formLink" @submit="submit">
     <div class="mb-3">
-        <label for="" class="form-label"></label>
-        <input type="" class="form-control" id="" required>
+        <label for="block_id" class="form-label">{{ 'Block'|trans }}</label>
+        <select v-model="block_id" class="form-select" id="block_id" required>
+            <option v-for="block in blocks" v-bind:value="block.id" v-html="block.name"></option>
+        </select>
     </div>
-    <button type="submit" class="btn btn-primary">{{ 'Send'|trans }}</button>
+    <div class="mb-3">
+        <label for="link-name" class="form-label">{{ 'Name'|trans }}</label>
+        <input type="text" class="form-control" id="link-name" required v-model="name">
+    </div>
+    <div class="mb-3">
+        <label for="href" class="form-label">{{ 'Link'|trans }}</label>
+        <input type="text" class="form-control" id="href" required v-model="href">
+    </div>
+    <div class="mb-3">
+        <label for="icon" class="form-label">{{ 'Icon'|trans }}</label>
+        <input type="text" class="form-control" id="icon" required v-model="icon">
+    </div>
+    <div class="mb-3">
+        <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" v-model="private" v-model="private">
+            {{ 'Private'|trans }}
+        </label>
+    </div>
+    <button type="button" class="btn btn-secondary float-right" data-bs-dismiss="modal">{{ 'Close'|trans }}</button>
+    <button type="submit" class="btn btn-primary float-right" style="margin-right: 1em;">{{ 'Send'|trans }}</button>
 </form>

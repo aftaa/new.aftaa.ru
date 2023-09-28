@@ -15,7 +15,7 @@ $(function () {
         methods: {
             async conversion(event) {
                 let id = event.target.dataset.id;
-                jwtFetch('/private/link/view/' + id)
+                jwtFetch('/private/view/' + id)
                     .then(response => response.json())
                     .then((data) => vm.top['s' + id].count = data.views);
             },

@@ -3,7 +3,7 @@
     <script src="{{ asset('js/index.js') }}?t={{ 'now'|date('U') }}"></script>
 {% endblock %}
 {% block body %}
-    <main id="app">
+    <main id="app" class="display-none">
         <div class="container">
             <div class="row">
                 {% include 'index/top.html.twig' %}
