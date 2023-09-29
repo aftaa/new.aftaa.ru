@@ -64,7 +64,7 @@ async function jwtLogin() {
     if (!localStorage.getItem('token')) {
         await jwtFetchToken();
     } else {
-        let response = await jwtFetchResponse('/private/test', 'HEAD');
+        let response = await jwtFetchResponse('/private/test');
         if (401 === response.status) {
             await jwtFetchToken();
         }
