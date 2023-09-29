@@ -29,7 +29,7 @@ div.block {
 }
 
 .table td {
-    padding: 0;
+    padding: 1px;
 }
 
 #spinner-wrapper {
