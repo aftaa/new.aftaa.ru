@@ -23,7 +23,7 @@ $(function () {
                                 let id = event.target.dataset.id;
                                 jwtFetch('/private/view/' + id)
                                     .then(response => response.json())
-                                    .then((data) => vm.top['s' + id].count = data.views);
+                                    .then((data) => vm.top['_' + id].count = data.views);
                             },
                             loadIndexData() {
                                 vm.columns = data.data.columns;
