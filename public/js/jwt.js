@@ -35,7 +35,8 @@ async function jwtFetchResponse(uri, method = 'GET', body = null) {
         method: method,
         headers: {
             'Authorization': 'Bearer ' + localStorage.getItem('token'),
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
         }
     };
 
