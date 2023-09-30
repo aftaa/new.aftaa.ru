@@ -30,20 +30,20 @@ async function jwtFetchToken() {
  * @param body
  * @returns {Promise<Response>}
  */
-async function jwtFetchResponse(uri, method = 'GET', body = null) {
+function jwtFetchResponse(uri, method = 'GET', body = null) {
     let options = {
         method: method,
         headers: {
+            'Accept': 'application/json',
             'Authorization': 'Bearer ' + localStorage.getItem('token'),
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
+            'Content-Type': 'application/json'
         }
     };
 
     if (body) {
         options.body = JSON.stringify(body);
     }
-    return await fetch(host + uri, options);
+    return fetch(host + uri, options);
 }
 
 /**
