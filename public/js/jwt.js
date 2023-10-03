@@ -55,7 +55,6 @@ function jwtFetchResponse(uri, method = 'GET', body = null) {
 async function jwtFetch(uri, method = 'GET', body = null) {
     await jwtLogin();
     return jwtFetchResponse(uri, method, body);
-        // .then((response) => response.json());
 }
 
 /**
@@ -85,3 +84,35 @@ function jwtExit() {
     delete localStorage.token;
     modalLogin.show();
 }
+
+// function jwtFetch1(url, method = 'GET', body = null) {
+//
+//     let options = {
+//         method: method,
+//         headers: {
+//             'Accept': 'application/json',
+//             'Authorization': 'Bearer ' + localStorage.getItem('token'),
+//             'Content-Type': 'application/json'
+//         }
+//     };
+//
+//     if (null !== body) {
+//         options.body = JSON.stringify(body);
+//     }
+//
+//     fetch(url, options)
+//         .then(response => {
+//             if (401 === response.status) {
+//                 fetch('/login_check', {
+//                     method: 'POST',
+//                     headers: {'Content-Type': 'application/json'},
+//                     body: JSON.stringify({
+//                         username: localStorage.username,
+//                         password: localStorage.password
+//                     }).then(() => );
+//                 })
+//             } else {
+//                 return response.json();
+//             }
+//         });
+// }
