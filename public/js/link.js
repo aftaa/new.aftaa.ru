@@ -37,10 +37,14 @@ $(function () {
                     name: this.name,
                     href: this.href,
                     icon: this.icon ?? '',
-                    private: this.icon ?? false
+                    private: this.private ?? false
                 };
+
+                console.log('body:', body);
+
                 jwtFetch(this.api, 'POST', body)
-                    .then(() => {
+                    .then((response) => {
+                        console.log('status:', response.status);
                         stopSpinner();
                         this.modal.hide();
                         enInputs();
