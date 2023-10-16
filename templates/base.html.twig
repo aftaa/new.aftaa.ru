@@ -11,8 +11,6 @@
     <script src="{{ asset('js/bootstrap.bundle-5.3.2.js') }}"></script>
     <script src="{{ asset('js/jquery-3.7.1.js') }}"></script>
     <script src="{{ asset('js/vue-2.7.14.js') }}"></script>
-{#    <script src="{{ asset('js/login.js') }}?t={{ 'now'|date('U') }}"></script>#}
-    <script src="{{ asset('js/jwt.js') }}?t={{ 'now'|date('U') }}"></script>
     <script src="{{ asset('js/jwt-fetch.js') }}?t={{ 'now'|date('U') }}"></script>
     <script src="{{ asset('js/common.js') }}?t={{ 'now'|date('U') }}"></script>
     <script>
@@ -32,5 +30,6 @@
 {% include 'login/modal.html.twig' %}
 {% block body %}{% endblock %}
 {% block js %}{% endblock %}
+<script src="{{ asset('js/jwt-exit.js') }}?t={{ 'now'|date('U') }}"></script>
 </body>
 </html>
