@@ -11,6 +11,7 @@ $(function () {
                         data: {
                             columns: {},
                             top: {},
+                            last: {},
 
                             debug: true,
                             requestDataFail: false,
@@ -28,6 +29,7 @@ $(function () {
                             loadIndexData() {
                                 vm.columns = data.data.columns;
                                 vm.top = data.data.top;
+                                vm.last = data.data.last;
                                 $('#app').removeClass('display-none');
                                 stopSpinner();
                             }
