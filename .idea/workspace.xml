@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="31873c2a-92ba-4e6f-a2f2-ebd415f338b2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/jwt.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/jwt.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +177,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;js.last.introduce.type&quot;: &quot;LET&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/var/www/new.aftaa.ru/templates/link&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/var/www/sdt-test&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -227,6 +226,10 @@
       <workItem from="1695803862082" duration="64122000" />
       <workItem from="1695928416366" duration="23999000" />
       <workItem from="1696141788357" duration="7435000" />
+      <workItem from="1696348935902" duration="3191000" />
+      <workItem from="1696453778787" duration="2508000" />
+      <workItem from="1696524726725" duration="2777000" />
+      <workItem from="1696598453215" duration="2033000" />
     </task>
     <servers />
   </component>
