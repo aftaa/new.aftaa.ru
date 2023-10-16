@@ -26,6 +26,13 @@ $(function () {
                                     .then(response => response.json())
                                     .then(data => vm.top['_' + id].count = data.views);
                             },
+                            updateLast: (event) => {
+                                jwtFetch('/private/data/last')
+                                    .then(response => response.json())
+                                    .then(data => vm.last = data);
+                                let id = event.target.dataset.id;
+                                jwtFetch('/private/view/' + id);
+                            },
                             loadIndexData() {
                                 vm.columns = data.data.columns;
                                 vm.top = data.data.top;
