@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31873c2a-92ba-4e6f-a2f2-ebd415f338b2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/public/js/jwt-fetch.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/jwt-fetch.js" afterDir="false" />
-    </list>
+    <list default="true" id="31873c2a-92ba-4e6f-a2f2-ebd415f338b2" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -233,7 +231,7 @@
       <workItem from="1696598453215" duration="2033000" />
       <workItem from="1697428382512" duration="978000" />
       <workItem from="1697439429131" duration="2204000" />
-      <workItem from="1697469949990" duration="5717000" />
+      <workItem from="1697469949990" duration="6292000" />
     </task>
     <servers />
   </component>
