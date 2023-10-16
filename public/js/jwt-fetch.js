@@ -38,8 +38,6 @@ function jwtFetch(url, method = 'GET', body = null, repeat = 10) {
                             $('#formLogin').on('submit', () => {
                                 localStorage.username = $('#email').val();
                                 localStorage.password = $('#password').val();
-                                vm.loadIndexData();
-                                return false;
                             })
                         } else {
                             return response.json()
