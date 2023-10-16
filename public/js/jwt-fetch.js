@@ -35,12 +35,10 @@ function jwtFetch(url, method = 'GET', body = null, repeat = 10) {
                             modalLogin.show();
                             $('#email').val(localStorage.username);
                             $('#password').val(localStorage.password);
-                            return $('#formLogin').on('submit', () => {
+                            $('#formLogin').on('submit', () => {
                                 localStorage.username = $('#email').val();
                                 localStorage.password = $('#password').val();
                             })
-                            .then(() => jwtFetch(url, method, body, repeat))
-
                         } else {
                             return response.json()
                                 .then(data => {
