@@ -15,7 +15,7 @@ function jwtFetch(url, method = 'GET', body = null, repeat = 10) {
 
     return fetch(host + url, options)
         .then(response => {
-            if (401 === response.status) {
+            if (200 !== response.status) {
                 return fetch(host + '/login_check', {
                     body: JSON.stringify({
                         username: localStorage.username,
@@ -25,7 +25,7 @@ function jwtFetch(url, method = 'GET', body = null, repeat = 10) {
                     method: 'POST'
                 })
                     .then(response => {
-                        if (401 === response.status) {
+                        if (200 !== response.status) {
                             $('#email,#password').addClass('is-invalid');
                             modalLogin.show();
                             $('#email').val(localStorage.username);
@@ -33,8 +33,8 @@ function jwtFetch(url, method = 'GET', body = null, repeat = 10) {
                             return $('#formLogin').on('submit', () => {
                                 localStorage.username = $('#email').val();
                                 localStorage.password = $('#password').val();
-                                return jwtFetch(url, method, body, repeat);
                             })
+                            .then(() => jwtFetch(url, method, body, repeat))
 
                         } else {
                             return response.json()
