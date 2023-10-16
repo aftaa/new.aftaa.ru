@@ -1,5 +1,10 @@
 function jwtFetch(url, method = 'GET', body = null, repeat = 10) {
 
+    if (0 === repeat--) {
+        console.log('Количество попыток авторизоваться исчерпано');
+        return;
+    }
+
     let options = {
         method: method,
         headers: {
