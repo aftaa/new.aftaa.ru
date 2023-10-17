@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31873c2a-92ba-4e6f-a2f2-ebd415f338b2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/public/js/jwt-fetch.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/jwt-fetch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index/last.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index/last.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +233,7 @@
       <workItem from="1696598453215" duration="2033000" />
       <workItem from="1697428382512" duration="978000" />
       <workItem from="1697439429131" duration="2204000" />
-      <workItem from="1697469949990" duration="7178000" />
+      <workItem from="1697469949990" duration="7879000" />
     </task>
     <servers />
   </component>
