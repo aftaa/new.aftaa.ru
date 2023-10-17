@@ -11,7 +11,9 @@ let vm = new Vue({
             jwtFetch('/private/view/' + id)
                 .then(response => response.json())
                 .then(data => {
-                    vm.top['_' + id].count = data.views;
+                    if (vm.top['_' + id]) {
+                        vm.top['_' + id].count = data.views;
+                    }
                     jwtFetch('/private/data/last')
                         .then(response => response.json())
                         .then(data => vm.last = data);
