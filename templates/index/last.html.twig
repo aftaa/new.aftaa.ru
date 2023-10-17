@@ -4,5 +4,5 @@
         <img alt="" v-bind:src="link.icon" width="16" height="16">
     </a>&nbsp;
     <a v-bind:href="link.href" target="_blank" v-html="link.name"
-       v-bind:data-id="link.id" @click="conversion"></a>
+       v-bind:data-id="link.id" v-on:click="conversion"></a>
 </div>
