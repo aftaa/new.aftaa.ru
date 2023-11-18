@@ -6,7 +6,7 @@ services:
     ports:
       - "49001:80"
     volumes:
-      - .:/var/www/new.aftaa.ru
+      - .:/var/www/aftaa.ru
       - ./docker/nginx/hosts:/etc/nginx/conf.d
       - ./docker/nginx/logs:/var/log/nginx
     restart: always
@@ -16,5 +16,5 @@ services:
   php:
     build: docker/php
     volumes:
-      - .:/var/www/new.aftaa.ru
+      - .:/var/www/aftaa.ru
     restart: always
