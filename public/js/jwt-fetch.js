@@ -30,7 +30,7 @@ function jwtFetch(url, method = 'GET', body = null, repeat = 10) {
                 })
                     .then(response => {
                         if (200 !== response.status) {
-                            $('#email,#password').addClass('is-invalid');
+                            // $('#email,#password').addClass('is-invalid');
                             modalLogin.show();
                             $('#email').val(localStorage.username);
                             $('#password').val(localStorage.password);

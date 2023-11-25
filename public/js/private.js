@@ -11,12 +11,12 @@ let vmPrivate = new Vue({
             jwtFetch('/private/view/' + id)
                 .then(response => response.json())
                 .then(data => {
-                    if (vm.top['_' + id]) {
-                        vm.top['_' + id].count = data.views;
+                    if (vmPrivate.top['_' + id]) {
+                        vmPrivate.top['_' + id].count = data.views;
                     }
                     jwtFetch('/private/data/last')
                         .then(response => response.json())
-                        .then(data => vm.last = data);
+                        .then(data => vmPrivate.last = data);
                 });
         },
 
@@ -24,9 +24,9 @@ let vmPrivate = new Vue({
             jwtFetch('/private/data/index')
                 .then(response => response.json())
                 .then(data => {
-                    vm.columns = data.data.columns;
-                    vm.top = data.data.top;
-                    vm.last = data.data.last;
+                    vmPrivate.columns = data.data.columns;
+                    vmPrivate.top = data.data.top;
+                    vmPrivate.last = data.data.last;
                     $('#app').removeClass('display-none');
                     stopSpinner();
 
