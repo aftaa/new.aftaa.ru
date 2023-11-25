@@ -7,10 +7,10 @@ let vmIndex = new Vue({
     },
     methods: {
         loadIndexData() {
-            fetch('/public/data/index')
+            fetch(window.host + '/public/data/index')
                 .then(response => response.json())
                 .then(data => {
-                    vm.columns = data.data.columns;
+                    vmIndex.columns = data;
                     $('#app').removeClass('display-none');
                     stopSpinner();
                 });

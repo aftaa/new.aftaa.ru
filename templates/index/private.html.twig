@@ -1,11 +1,12 @@
 {% extends 'base.html.twig' %}
 {% block js %}
-    <script src="{{ asset('js/public.js') }}?t={{ 'now'|date('U') }}"></script>
+    <script src="{{ asset('js/private.js') }}?t={{ 'now'|date('U') }}"></script>
 {% endblock %}
 {% block body %}
     <main id="app" class="display-none">
         <div class="container-fluid">
             <div class="row">
+                {% include 'index/top.html.twig' %}
                 <div class="block col col-sm-6 col-lg-4" v-for="blocks in columns">
                     <div v-for="block in blocks">
                         <h3 class="mt-3" v-html="block.name"></h3>
