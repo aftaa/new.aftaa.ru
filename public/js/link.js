@@ -29,7 +29,8 @@ $(function () {
                     });
             },
 
-            add: function () {
+            add: function (event) {
+                event.preventDefault();
                 disInputs();
                 spinner();
                 let body = {
@@ -71,7 +72,8 @@ $(function () {
                     });
             },
 
-            save: function () {
+            save: function (event) {
+                event.preventDefault();
                 disInputs();
                 spinner();
                 let body = {};
