@@ -2,8 +2,6 @@ function jwtFetch(url, method = 'GET', body = null, repeat = 10) {
 
     if (0 === repeat--) {
         throw new Error('Количество попыток авторизоваться исчерпано');
-    } else {
-        console.log(localStorage.token)
     }
 
     let options = {
@@ -57,4 +55,5 @@ function jwtFetch(url, method = 'GET', body = null, repeat = 10) {
                 return response;
             }
         })
+        .catch(error => console.log('Error: ', error));
 }
