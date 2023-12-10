@@ -20,6 +20,8 @@ function jwtFetch(url, method = 'GET', body = null, repeat = 10) {
     return fetch(host + url, options)
         .then(response => {
             if (401 === response.status) {
+                if (!localStorage.username) localStorage.username = '';
+                if (!localStorage.password) localStorage.password = '';
                 return fetch(host + '/login_check', {
                     body: JSON.stringify({
                         username: localStorage.username,
@@ -55,5 +57,5 @@ function jwtFetch(url, method = 'GET', body = null, repeat = 10) {
                 return response;
             }
         })
-        .catch(error => console.log('Error: ', error));
+        .catch(error => console.log(error));
 }
