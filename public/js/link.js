@@ -109,7 +109,7 @@ $(function () {
             },
 
             submit: function (event) {
-                this.id ? this.save(event) : this.add();
+                this.id ? this.save(event) : this.add(event);
             },
 
             loadBlocks: async function () {
