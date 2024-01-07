@@ -4,6 +4,7 @@ let vmPrivate = new Vue({
         columns: {},
         top: {},
         last: {},
+        spinner: true
     },
     methods: {
         conversion(event) {
@@ -24,12 +25,10 @@ let vmPrivate = new Vue({
             jwtFetch('/private/data/index')
                 .then(response => response.json())
                 .then(data => {
-                    vmPrivate.columns = data.data.columns;
-                    vmPrivate.top = data.data.top;
-                    vmPrivate.last = data.data.last;
-                    $('#app').removeClass('display-none');
-                    stopSpinner();
-
+                    this.columns = data.data.columns;
+                    this.top = data.data.top;
+                    this.last = data.data.last;
+                    this.spinner = false;
                 });
         }
     }

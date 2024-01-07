@@ -4,12 +4,7 @@ let vm = new Vue({
         columns: {},
         trash: {},
         views: {},
-
-        debug: true,
-        requestDataFail: false,
-        status: 200,
-
-        seen: false,
+        spinner: true
     },
     methods: {
         conversion(event) {
@@ -18,16 +13,15 @@ let vm = new Vue({
                 .then(response => response.json())
                 .then((data) => vm.top['_' + id].count = data.views);
         },
+
         loadAdminData() {
-            spinner();
             jwtFetch('/private/data/admin')
                 .then(response => response.json())
                 .then(data => {
                     this.columns = data.columns;
                     this.trash = data.trash;
                     this.views = data.views;
-                    $('#app').removeClass('display-none');
-                    stopSpinner();
+                    this.spinner = false;
                 });
         },
 

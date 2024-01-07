@@ -3,7 +3,8 @@
     <script src="{{ asset('js/public.js') }}?t={{ 'now'|date('U') }}"></script>
 {% endblock %}
 {% block body %}
-    <main id="app" class="display-none">
+    <main id="app">
+        {% include 'spinner.html.twig' %}
         <div class="container-fluid max-width-1300">
             <div class="row">
                 <div class="block col col-sm-6 col-lg-4" v-for="blocks in columns">

@@ -1,25 +1,25 @@
 <form id="formLink" @submit="submit">
     <div class="mb-3">
         <label for="block_id" class="form-label">{{ 'Block'|trans }}</label>
-        <select v-model.number="block_id" class="form-select" id="block_id" required>
+        <select v-model.number="block_id" class="form-select" id="block_id" required :disabled="disabled">
             <option v-for="block in blocks" v-bind:value="block.id" v-html="block.name"></option>
         </select>
     </div>
     <div class="mb-3">
         <label for="link-name" class="form-label">{{ 'Name'|trans }}</label>
-        <input type="text" class="form-control" id="link-name" required v-model="name">
+        <input type="text" class="form-control" id="link-name" required v-model="name" :disabled="disabled">
     </div>
     <div class="mb-3">
         <label for="href" class="form-label">{{ 'Link'|trans }}</label>
-        <input type="text" class="form-control" id="href" required v-model="href">
+        <input type="text" class="form-control" id="href" required v-model="href" :disabled="disabled">
     </div>
     <div class="mb-3">
         <label for="icon" class="form-label">{{ 'Icon'|trans }}</label>
-        <input type="text" class="form-control" id="icon" v-model="icon">
+        <input type="text" class="form-control" id="icon" v-model="icon" :disabled="disabled">
     </div>
     <div class="mb-3">
         <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" v-model="private" v-model="private">
+            <input type="checkbox" class="form-check-input" v-model="private" v-model="private" :disabled="disabled">
             {{ 'Private'|trans }}
         </label>
     </div>

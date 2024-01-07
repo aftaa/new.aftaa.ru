@@ -11,7 +11,8 @@
 {% block body %}
     {% include 'block/modal.html.twig' %}
     {% include 'link/modal.html.twig' %}
-    <main id="app" class="display-none container-fluid" style="border: 1px solid red">
+    <main id="app">
+        {% include 'spinner.html.twig' %}
         <div class="container-fluid">
             <div class="row">
                 <div class="admin-block col-sm-6 col-lg-4" v-for="blocks in columns">

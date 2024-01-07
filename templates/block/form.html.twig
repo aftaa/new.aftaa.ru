@@ -1,19 +1,19 @@
 <form id="formBlock" @submit="submit">
     <div class="mb-3">
         <label for="name" class="form-label">{{ 'Name'|trans }}:</label>
-        <input type="text" class="form-control" id="name" required v-model="name">
+        <input type="text" class="form-control" id="name" required v-model="name" :disabled="disabled">
     </div>
     <div class="mb-3">
         <label for="col" class="form-label">{{ 'Column'|trans }}:</label>
-        <input type="number" class="form-control" id="col" required v-model.number="col">
+        <input type="number" class="form-control" id="col" required v-model.number="col" :disabled="disabled">
     </div>
     <div class="mb-3">
         <label for="sort" class="form-label">{{ 'Sort'|trans }}:</label>
-        <input type="number" class="form-control" id="sort" required v-model.number="sort">
+        <input type="number" class="form-control" id="sort" required v-model.number="sort" :disabled="disabled">
     </div>
     <div class="mb-3">
         <label for="private" class="form-check-label">
-            <input type="checkbox" class="form-check-input" id="private" v-model="private">
+            <input type="checkbox" class="form-check-input" id="private" v-model="private" :disabled="disabled">
             {{ 'Private'|trans }}
         </label>
     </div>

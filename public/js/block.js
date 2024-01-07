@@ -6,7 +6,7 @@ let vmBlock = new Vue({
         col: 0,
         sort: 0,
         private: false,
-
+        disabled: false,
         api: '/private/block/',
         keys: ['name', 'col', 'sort', 'private'],
         modal: new bootstrap.Modal('#modalBlock')
@@ -22,8 +22,8 @@ let vmBlock = new Vue({
 
         add(event) {
             event.preventDefault();
-            disInputs();
-            spinner();
+            this.disabled = true;
+            vm.spinner = true;
             let body = {};
             for (let key of this.keys) {
                 body[key] = this[key];
@@ -33,16 +33,16 @@ let vmBlock = new Vue({
 
             jwtFetch(this.api, 'POST', body)
                 .then(() => {
-                    stopSpinner();
+                    vm.spinner = false;
                     this.modal.hide();
-                    enInputs();
+                    this.disabled = false;
                     vm.loadAdminData();
                 });
             return false;
         },
 
         load(event) {
-            spinner();
+            vm.spinner = true;
             this.id = event.target.dataset.id;
             jwtFetch(this.api + this.id)
                 .then(response => response.json())
@@ -50,43 +50,43 @@ let vmBlock = new Vue({
                     for (let key of this.keys) {
                         this[key] = block[key];
                     }
-                    stopSpinner();
+                    vm.spinner = false;
                     this.modal.show();
                 });
         },
 
         save(event) {
             event.preventDefault();
-            disInputs();
-            spinner();
+            this.disabled = true;
+            vm.spinner = true;
             let body = {};
             for (let key of this.keys) {
                 body[key] = this[key];
             }
             jwtFetch(this.api + this.id, 'PUT', body)
                 .then(() => {
-                    stopSpinner();
+                    vm.spinner = false;
                     this.modal.hide();
-                    enInputs();
+                    this.disabled = false;
                     vm.loadAdminData();
                 });
             return false;
         },
 
         unlink(event) {
-            spinner();
+            vm.spinner = true;
             jwtFetch(this.api + event.target.dataset.id, 'DELETE')
                 .then(() => {
-                    stopSpinner();
+                    vm.spinner = false;
                     vm.loadAdminData();
                 });
         },
 
         recovery() {
-            spinner();
+            vm.spinner = true;
             jwtFetch(this.api + event.target.dataset.id, 'PATCH')
                 .then(() => {
-                    stopSpinner();
+                    vm.spinner = false;
                     vm.loadAdminData();
                 });
         },

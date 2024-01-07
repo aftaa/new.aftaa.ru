@@ -3,7 +3,8 @@
     <script src="{{ asset('js/private.js') }}?t={{ 'now'|date('U') }}"></script>
 {% endblock %}
 {% block body %}
-    <main id="app" class="display-none">
+    <main id="app">
+        {% include 'spinner.html.twig' %}
         <div class="container-fluid max-width-1300">
             <div class="row">
                 {% include 'index/top.html.twig' %}
