@@ -11,7 +11,7 @@ let vm = new Vue({
             let id = event.target.dataset.id;
             jwtFetch('/private/view/' + id)
                 .then(response => response.json())
-                .then((data) => vm.top['_' + id].count = data.views);
+                .then(data => this.views[id] = data.views);
         },
 
         loadAdminData() {
