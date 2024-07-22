@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -40,29 +44,15 @@
             window.modalLogin = new bootstrap.Modal('#modalLogin');
         });
     </script>
-    <script>
-        function consentGrantedAdStorage() {
-            gtag('consent', 'update', {
-                'ad_storage': 'granted'
-            });
-        }
-    </script>
+    <script src="/js/klaro.config.js"></script>
+    <script src="/js/klaro.js"></script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGB5B975"
                   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-
-<script>
-    gtag('consent', 'default', {
-        'ad_storage': 'denied',
-        'ad_user_data': 'denied',
-        'ad_personalization': 'denied',
-        'analytics_storage': 'denied'
-    });
-</script>
-<button onclick="consentGrantedAdStorage()">Yes</button>
+<button onclick="klaro.show()">Yes</button>
 {% include 'login/modal.html.twig' %}
 {% block body %}{% endblock %}
 {% block js %}{% endblock %}
