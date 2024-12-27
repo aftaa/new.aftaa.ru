@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="31873c2a-92ba-4e6f-a2f2-ebd415f338b2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/php/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/docker/php/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -268,6 +269,8 @@
       <workItem from="1721747326027" duration="3280000" />
       <workItem from="1721760895439" duration="2087000" />
       <workItem from="1724535765277" duration="3000" />
+      <workItem from="1729472041913" duration="553000" />
+      <workItem from="1735272253465" duration="29000" />
     </task>
     <servers />
   </component>
