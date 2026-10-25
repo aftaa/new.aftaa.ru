@@ -14,6 +14,6 @@ RUN docker-php-ext-configure intl \
     && docker-php-ext-install zip
 
 RUN set -exv; \
-    curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --version=2.8.4 --filename=composer
+    curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 CMD ["php-fpm"]
