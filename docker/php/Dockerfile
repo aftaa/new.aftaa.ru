@@ -8,8 +8,7 @@ RUN set -exv; \
     libzip-dev \
     libicu-dev
 
-RUN docker-php-ext-install opcache \
-    && docker-php-ext-configure intl \
+RUN docker-php-ext-configure intl \
     && docker-php-ext-install intl \
     && docker-php-ext-configure zip \
     && docker-php-ext-install zip
