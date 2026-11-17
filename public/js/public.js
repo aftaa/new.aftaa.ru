@@ -6,10 +6,22 @@ let vmIndex = new Vue({
     },
     methods: {
         loadIndexData() {
+            this.spinner = true;
+
             fetch(window.host + '/public/data/index')
-                .then(response => response.json())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
+                    return response.json();
+                })
                 .then(data => {
                     this.columns = data;
+                })
+                .catch(error => {
+                    console.error('Не удалось загрузить данные:', error);
+                })
+                .finally(() => {
                     this.spinner = false;
                 });
         }

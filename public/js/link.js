@@ -1,7 +1,7 @@
 let vmLink = new Vue({
     el: '#formLink',
     data: {
-        id: 0,
+        id: null,
         block_id: 0,
         name: '',
         href: '',
@@ -10,21 +10,29 @@ let vmLink = new Vue({
         blocks: null,
         disabled: false,
         api: '/private/link/',
-        keys: ['block_id', 'name', 'href', 'icon', 'private'],
+        keys: ['name', 'href', 'icon', 'private'],
         modal: new bootstrap.Modal('#modalLink')
     },
     methods: {
         new(event) {
             vm.spinner = true;
+            this.id = null;
+            this.block_id = Number(event.target.dataset.blockId);
+            this.name = '';
+            this.href = '';
+            this.icon = '';
+            this.private = false;
+
             this.loadBlocks()
                 .then(() => {
-                    this.id = null;
-                    for (let key of this.keys) {
-                        this[key] = null;
-                    }
-                    this.block_id = event.target.dataset.blockId;
-                    vm.spinner = false;
                     this.modal.show();
+                })
+                .catch(error => {
+                    console.error('Не удалось загрузить блоки:', error);
+                    alert('Не удалось загрузить блоки');
+                })
+                .finally(() => {
+                    vm.spinner = false;
                 });
         },
 
@@ -32,7 +40,8 @@ let vmLink = new Vue({
             event.preventDefault();
             this.disabled = true;
             vm.spinner = true;
-            let body = {
+
+            const body = {
                 block_id: Number(this.block_id),
                 name: this.name,
                 href: this.href,
@@ -41,30 +50,51 @@ let vmLink = new Vue({
             };
 
             jwtFetch(this.api, 'POST', body)
-                .then((response) => {
-                    vm.spinner = false;
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
                     this.modal.hide();
-                    this.disabled = false;
                     vm.loadAdminData();
+                })
+                .catch(error => {
+                    console.error('Не удалось добавить ссылку:', error);
+                    alert('Не удалось добавить ссылку');
+                })
+                .finally(() => {
+                    this.disabled = false;
+                    vm.spinner = false;
                 });
+
             return false;
         },
 
         load(event) {
             vm.spinner = true;
             this.id = event.target.dataset.id;
+
             this.loadBlocks()
-                .then(() => {
-                    jwtFetch(this.api + this.id)
-                        .then(response => response.json())
-                        .then(link => {
-                            for (let key of this.keys) {
-                                this[key] = link[key];
-                            }
-                            this.block_id = link.block.id;
-                            vm.spinner = false;
-                            this.modal.show();
-                        });
+                .then(() => jwtFetch(this.api + this.id))
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(link => {
+                    this.name = link.name;
+                    this.href = link.href;
+                    this.icon = link.icon;
+                    this.private = link.private;
+                    this.block_id = Number(link.block.id);
+                    this.modal.show();
+                })
+                .catch(error => {
+                    console.error('Не удалось загрузить ссылку:', error);
+                    alert('Не удалось загрузить ссылку');
+                })
+                .finally(() => {
+                    vm.spinner = false;
                 });
         },
 
@@ -72,35 +102,70 @@ let vmLink = new Vue({
             event.preventDefault();
             this.disabled = true;
             vm.spinner = true;
-            let body = {};
-            for (let key of this.keys) {
-                body[key] = this[key];
-            }
+
+            const body = {
+                block_id: Number(this.block_id),
+                name: this.name,
+                href: this.href,
+                icon: this.icon ?? '',
+                private: this.private ?? false
+            };
+
             jwtFetch(this.api + this.id, 'PUT', body)
-                .then(() => {
-                    vm.spinner = false;
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
                     this.modal.hide();
-                    this.disabled = false;
                     vm.loadAdminData();
+                })
+                .catch(error => {
+                    console.error('Не удалось сохранить ссылку:', error);
+                    alert('Не удалось сохранить ссылку');
+                })
+                .finally(() => {
+                    this.disabled = false;
+                    vm.spinner = false;
                 });
+
             return false;
         },
 
-        unlink() {
+        unlink(event) {
             vm.spinner = true;
+
             jwtFetch(this.api + event.target.dataset.id, 'DELETE')
-                .then(() => {
-                    vm.spinner = false;
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
                     vm.loadAdminData();
+                })
+                .catch(error => {
+                    console.error('Не удалось удалить ссылку:', error);
+                    alert('Не удалось удалить ссылку');
+                })
+                .finally(() => {
+                    vm.spinner = false;
                 });
         },
 
-        recovery() {
+        recovery(event) {
             vm.spinner = true;
+
             jwtFetch(this.api + event.target.dataset.id, 'PATCH')
-                .then(() => {
-                    vm.spinner = false;
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
                     vm.loadAdminData();
+                })
+                .catch(error => {
+                    console.error('Не удалось восстановить ссылку:', error);
+                    alert('Не удалось восстановить ссылку');
+                })
+                .finally(() => {
+                    vm.spinner = false;
                 });
         },
 
@@ -110,8 +175,15 @@ let vmLink = new Vue({
 
         loadBlocks() {
             return jwtFetch('/private/block/')
-                .then(response => response.json())
-                .then(blocks => this.blocks = blocks);
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(blocks => {
+                    this.blocks = blocks;
+                });
         }
     }
 });

@@ -8,19 +8,43 @@ let vm = new Vue({
     },
     methods: {
         conversion(event) {
-            let id = event.target.dataset.id;
+            const id = event.target.dataset.id;
+
             jwtFetch('/private/view/' + id)
-                .then(response => response.json())
-                .then(data => this.views[id] = data.views);
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    this.views[id] = data.views;
+                })
+                .catch(error => {
+                    console.error('Не удалось обновить просмотры:', error);
+                });
         },
 
         loadAdminData() {
+            this.spinner = true;
+
             jwtFetch('/private/data/admin')
-                .then(response => response.json())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
+                    return response.json();
+                })
                 .then(data => {
                     this.columns = data.columns;
                     this.trash = data.trash;
                     this.views = data.views;
+                })
+                .catch(error => {
+                    console.error('Не удалось загрузить данные админки:', error);
+                    alert('Не удалось загрузить данные админки');
+                })
+                .finally(() => {
                     this.spinner = false;
                 });
         },

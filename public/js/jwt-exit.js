@@ -1,6 +1,10 @@
 function jwtExit() {
-    delete localStorage.username;
-    delete localStorage.password;
-    delete localStorage.token;
-    vmPrivate.loadIndexData();
+    localStorage.removeItem('username');
+    localStorage.removeItem('password');
+    localStorage.removeItem('token');
+
+    // Если мы на странице private — перезагружаем данные
+    if (typeof vmPrivate !== 'undefined' && typeof vmPrivate.loadPrivateIndexData === 'function') {
+        vmPrivate.loadPrivateIndexData();
+    }
 }

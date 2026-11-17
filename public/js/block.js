@@ -14,9 +14,10 @@ let vmBlock = new Vue({
     methods: {
         new() {
             this.id = null;
-            for (let key of this.keys) {
-                this[key] = null;
-            }
+            this.name = '';
+            this.col = 0;
+            this.sort = 0;
+            this.private = false;
             this.modal.show();
         },
 
@@ -24,34 +25,58 @@ let vmBlock = new Vue({
             event.preventDefault();
             this.disabled = true;
             vm.spinner = true;
-            let body = {};
-            for (let key of this.keys) {
-                body[key] = this[key];
-            }
 
-            if (!body.private) body.private = false;
+            const body = {
+                name: this.name,
+                col: this.col,
+                sort: this.sort,
+                private: this.private ?? false
+            };
 
             jwtFetch(this.api, 'POST', body)
-                .then(() => {
-                    vm.spinner = false;
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
                     this.modal.hide();
-                    this.disabled = false;
                     vm.loadAdminData();
+                })
+                .catch(error => {
+                    console.error('Не удалось добавить блок:', error);
+                    alert('Не удалось добавить блок');
+                })
+                .finally(() => {
+                    this.disabled = false;
+                    vm.spinner = false;
                 });
+
             return false;
         },
 
         load(event) {
             vm.spinner = true;
             this.id = event.target.dataset.id;
+
             jwtFetch(this.api + this.id)
-                .then(response => response.json())
-                .then(block => {
-                    for (let key of this.keys) {
-                        this[key] = block[key];
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}`);
                     }
-                    vm.spinner = false;
+                    return response.json();
+                })
+                .then(block => {
+                    this.name = block.name;
+                    this.col = block.col;
+                    this.sort = block.sort;
+                    this.private = block.private;
                     this.modal.show();
+                })
+                .catch(error => {
+                    console.error('Не удалось загрузить блок:', error);
+                    alert('Не удалось загрузить блок');
+                })
+                .finally(() => {
+                    vm.spinner = false;
                 });
         },
 
@@ -59,35 +84,69 @@ let vmBlock = new Vue({
             event.preventDefault();
             this.disabled = true;
             vm.spinner = true;
-            let body = {};
-            for (let key of this.keys) {
-                body[key] = this[key];
-            }
+
+            const body = {
+                name: this.name,
+                col: this.col,
+                sort: this.sort,
+                private: this.private ?? false
+            };
+
             jwtFetch(this.api + this.id, 'PUT', body)
-                .then(() => {
-                    vm.spinner = false;
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
                     this.modal.hide();
-                    this.disabled = false;
                     vm.loadAdminData();
+                })
+                .catch(error => {
+                    console.error('Не удалось сохранить блок:', error);
+                    alert('Не удалось сохранить блок');
+                })
+                .finally(() => {
+                    this.disabled = false;
+                    vm.spinner = false;
                 });
+
             return false;
         },
 
         unlink(event) {
             vm.spinner = true;
+
             jwtFetch(this.api + event.target.dataset.id, 'DELETE')
-                .then(() => {
-                    vm.spinner = false;
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
                     vm.loadAdminData();
+                })
+                .catch(error => {
+                    console.error('Не удалось удалить блок:', error);
+                    alert('Не удалось удалить блок');
+                })
+                .finally(() => {
+                    vm.spinner = false;
                 });
         },
 
-        recovery() {
+        recovery(event) {
             vm.spinner = true;
+
             jwtFetch(this.api + event.target.dataset.id, 'PATCH')
-                .then(() => {
-                    vm.spinner = false;
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
                     vm.loadAdminData();
+                })
+                .catch(error => {
+                    console.error('Не удалось восстановить блок:', error);
+                    alert('Не удалось восстановить блок');
+                })
+                .finally(() => {
+                    vm.spinner = false;
                 });
         },
 
